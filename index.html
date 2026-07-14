@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gem Vault — Memory Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background particles -->
+  <div class="bg-particles" aria-hidden="true">
+    <span></span><span></span><span></span>
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- ── Header ── -->
+    <header class="game-header">
+      <div class="gem-crown" aria-hidden="true">💎</div>
+      <h1 class="game-title">Gem Vault</h1>
+      <p class="game-subtitle">Match the crystals. Clear the vault.</p>
+    </header>
+
+    <!-- ── Stats Bar ── -->
+    <div class="stats-bar" role="status" aria-live="polite">
+      <div class="stat">
+        <span class="stat-value" id="stat-moves">0</span>
+        <span class="stat-label">Moves</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value" id="stat-pairs">0<span class="stat-denom">/8</span></span>
+        <span class="stat-label">Pairs</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value" id="stat-time">0:00</span>
+        <span class="stat-label">Time</span>
+      </div>
+    </div>
+
+    <!-- ── Game Board ── -->
+    <main class="board-wrap" id="board-wrap">
+      <ul class="cards" id="cards" role="list" aria-label="Memory card grid">
+        <!-- 16 cards injected by JS -->
+      </ul>
+    </main>
+
+    <!-- ── Controls ── -->
+    <div class="controls">
+      <button class="btn btn-primary" id="btn-shuffle" aria-label="Shuffle and restart game">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="16 3 21 3 21 8"></polyline>
+          <line x1="4" y1="20" x2="21" y2="3"></line>
+          <polyline points="21 16 21 21 16 21"></polyline>
+          <line x1="15" y1="15" x2="21" y2="21"></line>
+        </svg>
+        New Game
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ── Win Overlay ── -->
+  <div class="win-overlay" id="win-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="You won!">
+    <div class="win-card">
+      <div class="win-gems" aria-hidden="true">💎✨💎</div>
+      <h2 class="win-title">Vault Cleared!</h2>
+      <div class="win-stats">
+        <div class="win-stat">
+          <span class="win-stat-value" id="win-moves">—</span>
+          <span class="win-stat-label">Moves</span>
+        </div>
+        <div class="win-stat">
+          <span class="win-stat-value" id="win-time">—</span>
+          <span class="win-stat-label">Time</span>
+        </div>
+        <div class="win-stat">
+          <span class="win-stat-value" id="win-rating">—</span>
+          <span class="win-stat-label">Rating</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-win" id="btn-play-again">
+        Play Again
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
