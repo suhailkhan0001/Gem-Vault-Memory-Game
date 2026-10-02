@@ -22,34 +22,7 @@ memory-gem-game/
     └── img-8.png     ← Purple octahedron
 ```
 
-## Deploy to Netlify (2 ways)
-
-### Option A — Drag & Drop (easiest)
-1. Go to [netlify.com/drop](https://app.netlify.com/drop)
-2. Drag the entire `memory-gem-game/` folder onto the page
-3. Done — live URL in seconds ✅
-
-### Option B — Netlify CLI
-```bash
-npm install -g netlify-cli
-netlify deploy --prod --dir memory-gem-game
-```
-
-### Option C — GitHub + Netlify
-1. Push this folder to a GitHub repo
-2. Connect repo on [app.netlify.com](https://app.netlify.com)
-3. Set **publish directory** to `.` (or the folder name)
-4. Deploy
-
-## Run Locally
-Just open `index.html` in any browser — no build step, no dependencies.
-
-Or use a local server (avoids any SVG CORS quirks on some browsers):
-```bash
-npx serve .
-# or
-python3 -m http.server 3000
-```
+🔗 **Live demo:** https://gemvaultbysuhail.netlify.app/
 
 ## Bugs Fixed vs Original
 | # | Bug | Fix |
